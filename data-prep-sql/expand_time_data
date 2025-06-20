@@ -1,0 +1,93 @@
+
+## EXPAND TIME DATA INTO NEW COLUMNS
+
+This query extracts date and time components from `CleanTimeCreate`, `CleanTimeDispatch`, `CleanTimeArrival`, and `CleanTimeClosed` into separate fields for year, month, day, hour, and minute.
+
+These expanded columns support time-based analysis and allow for flexible visualizations by time of day, day of week, or month of year.
+
+```sql
+SELECT
+  NOPD_Item,
+  Type,
+  TypeText,
+  Priority,
+  MapX,
+  MapY,
+  CleanTimeCreate,
+  CleanTimeDispatch,
+  CleanTimeArrival,
+  CleanTimeClosed,
+  Disposition,
+  DispositionText,
+  InitialType,
+  InitialTypeText,
+  InitialPriority,
+  SelfInitiated,
+  Beat,
+  BLOCK_ADDRESS,
+  Zip,
+  PoliceDistrict,
+  Location,
+  EXTRACT(MONTH
+  FROM
+    CleanTimeCreate) AS CreateMonth,
+  EXTRACT(DAY
+  FROM
+    CleanTimeCreate) AS CreateDay,
+  EXTRACT(YEAR
+  FROM
+    CleanTimeCreate) AS CreateYear,
+  EXTRACT(HOUR
+  FROM
+    CleanTimeCreate) AS CreateHour,
+  EXTRACT(MINUTE
+  FROM
+    CleanTimeCreate) AS CreateMinute,
+  EXTRACT(MONTH
+  FROM
+    CleanTimeDispatch) AS DispatchMonth,
+  EXTRACT(DAY
+  FROM
+    CleanTimeDispatch) AS DispatchDay,
+  EXTRACT(YEAR
+  FROM
+    CleanTimeDispatch) AS DispatchYear,
+  EXTRACT(HOUR
+  FROM
+    CleanTimeDispatch) AS DispatchHour,
+  EXTRACT(MINUTE
+  FROM
+    CleanTimeDispatch) AS DispatchMinute,
+  EXTRACT(MONTH
+  FROM
+    CleanTimeArrival) AS ArrivalMonth,
+  EXTRACT(DAY
+  FROM
+    CleanTimeArrival) AS ArrivalDay,
+  EXTRACT(YEAR
+  FROM
+    CleanTimeArrival) AS ArrivalYear,
+  EXTRACT(HOUR
+  FROM
+    CleanTimeArrival) AS ArrivalHour,
+  EXTRACT(MINUTE
+  FROM
+    CleanTimeArrival) AS ArrivalMinute,
+  EXTRACT(MONTH
+  FROM
+    CleanTimeClosed) AS ClosedMonth,
+  EXTRACT(DAY
+  FROM
+    CleanTimeClosed) AS ClosedDay,
+  EXTRACT(YEAR
+  FROM
+    CleanTimeClosed) AS ClosedYear,
+  EXTRACT(HOUR
+  FROM
+    CleanTimeClosed) AS ClosedHour,
+  EXTRACT(MINUTE
+  FROM
+    CleanTimeClosed) AS ClosedMinute
+FROM
+  `melodic-crane-461722-j0.nola_crime.2019_2022_nola_crime_3rd_4th`;
+  ```
