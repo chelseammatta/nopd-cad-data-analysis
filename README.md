@@ -18,7 +18,7 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
 
 ## Project Status
 
-- Cleaned and standardized 458,255 CAD records across 4 years
+- Cleaned and standardized 458,255 CAD records across 4 years (after filtering to the 3rd and 4th districts)
 - Removed 11,213 DUPLICATE rows, 16,521 VOID rows, and 230 TEST INCIDENT rows
 - Categorized 73 unique call types into 16 major categories
 - Created four master tables:
@@ -51,7 +51,7 @@ These early insights not only shaped the project's categorization system, filter
 
 ## Tools & Technologies
 
-- **Google BigQuery (SQL):** data querying and transformation, and analysis
+- **Google BigQuery (SQL):** data querying, transformation, and analysis
 - **LibreOffice Calc and Google Sheets:** Preprocessing timestamps and verifying formatting  
 - **Looker Studio / Tableau (planned):** Visualization and dashboard creation
 - **GitHub:** Version control and public-facing documentation
@@ -119,5 +119,12 @@ To replicate this project or build on it:
 ## Skills Demonstrated
 
 - SQL, Data Cleaning, Categorization, Data Modeling, Response Time Analysis, Geospatial Prep, Data Documentation
+
+## Notes on Data Tables
+
+- During this project, I created multiple intermediate and cleaned tables.
+- Some tables may have been archived, renamed, or deleted after completed analysis.
+- Queries reference those tables as they existed at the time of analysis.
+- Query structure remains intact; this project is reproducible if table names reflect your own accurate ones.
 
 *This project is ongoing. Updates and improvements will be regularly added to this repository.*
