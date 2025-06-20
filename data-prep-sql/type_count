@@ -1,0 +1,20 @@
+## TYPETEXT COUNT
+
+This query counted the frequency of each call type and sorted in order from least to most. This query structure was used several times to populate this list.
+
+This list was used to help inform decisions based on cleanup, formatting, and re-naming similar call types, as well as categorization.
+
+I reduced the number of distinct call types from over 270 to just 73.
+
+```sql
+-- count the number of times each type of InitialTypeText_Cleaned appears in the table and order by ascending
+SELECT
+  InitialTypeText_Cleaned,
+  COUNT(*) AS Count
+FROM
+  `melodic-crane-461722-j0`.`nola_crime`.`2019_2022_nola_crime_cleanedtypetext2`
+GROUP BY
+  InitialTypeText_Cleaned
+ORDER BY
+  Count;
+```
