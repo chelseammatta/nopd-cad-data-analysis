@@ -1,5 +1,11 @@
+
+### Merge NOPD Data Across 2019-2022
+
+This query creates a new table that merges all of the NOPD CAD data from the individual yearly tables.
+
 ```sql
 -- create a new table called nola_crime_all_2019_2022 by combining tables 2019_nopd, 2020_nopd, 2021_nopd, and 2022_nopd
+-- 2019 data
 SELECT
   NOPD_Item,
   Type,
@@ -25,6 +31,8 @@ SELECT
 FROM
   `melodic-crane-461722-j0`.`nola_crime`.`2019_nopd`
 UNION ALL
+
+-- 2020 data
 SELECT
   NOPD_Item,
   Type,
@@ -34,7 +42,7 @@ SELECT
   MapY,
   CleanTimeCreate,
   CleanTimeDispatch,
-  CleanTimeArrive,
+  CleanTimeArrive AS CleanTimeArrival,
   CleanTimeClosed,
   Disposition,
   DispositionText,
@@ -50,6 +58,8 @@ SELECT
 FROM
   `melodic-crane-461722-j0`.`nola_crime`.`2020_nopd`
 UNION ALL
+
+-- 2021 data
 SELECT
   NOPD_Item,
   Type,
@@ -59,7 +69,7 @@ SELECT
   MapY,
   CleanTimeCreate,
   CleanTimeDispatch,
-  CleanTimeArrive,
+  CleanTimeArrive AS CleanTimeArrival,
   CleanTimeClosed,
   Disposition,
   DispositionText,
@@ -75,6 +85,8 @@ SELECT
 FROM
   `melodic-crane-461722-j0`.`nola_crime`.`2021_nopd`
 UNION ALL
+
+-- 2022 data
 SELECT
   NOPD_Item,
   Type,
@@ -84,7 +96,7 @@ SELECT
   MapY,
   CleanTimeCreate,
   CleanTimeDispatch,
-  CleanTimeArrive,
+  CleanTimeArrive AS CleanTimeArrival,
   CleanTimeClosed,
   Disposition,
   DispositionText,
@@ -99,3 +111,4 @@ SELECT
   Location
 FROM
   `melodic-crane-461722-j0`.`nola_crime`.`2022_nopd`;
+```
