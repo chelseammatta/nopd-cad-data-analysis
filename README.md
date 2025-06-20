@@ -1,2 +1,109 @@
 # nopd-cad-data-analysis
 Analysis of NOPD 911 CAD data from 2019-2022 from the 3rd and 4th districts.
+## Overview
+
+This project analyzes New Orleans Police Department (NOPD) 911 Computer-Aided Dispatch (CAD) data spanning 2019 to 2022, focusing on the 3rd and 4th police districts. The goal is to understand police resource allocation, call volumes, and response patterns, especially around major events such as Mardi Gras and the COVID-19 pandemic.
+
+## Project Objectives
+
+- Analyze how 911 call volume changed during major events such as COVID-19 lockdowns and Mardi Gras
+- Determine which call types and priorities were most likely to go unserved or receive delayed responses
+- Examine trends in domestic violence and violent/property crime over time
+- Identify geographic concentrations of specific incident types within the 3rd and 4th districts
+- Support data-informed public safety decision-making in resource allocation and emergency response 
+
+## Personal Motivation
+
+As a former EMT who worked in the neighborhoods covered by the 3rd and 4th police districts, I approached this project with firsthand insight into the urgency and complexity of emergency response. My goal is to use data to support safer, more efficient public safety systems. 
+
+## Project Status
+
+- Cleaned and standardized 458,255 CAD records across 4 years
+- Removed 11,213 DUPLICATE rows, 16, 521 VOID rows, and 230 TEST INCIDENT rows
+- Categorized 73 unique call types into 16 major categories
+- Created four master tables:
+  - All Calls (with served/unserved and self-initiated flags)
+  - Unserved calls
+  - Served, Self-Initiated
+  - Served, Public-Initiated
+- Response time metrics calculated (served only)
+- Next steps: developing visualizations and detailed analysis
+
+## Key Challenges & Decisions
+
+- Managed inconsistent timestamp formats across years using LibreOffice Calc for SQL compatibility
+- Removed ~23,000 invalid records (VOID, DUPLICATE, TEST INCIDENT) to improve data quality
+- Designed a Served/Unserved flag based on officer arrival data to reflect response coverage
+- Separated Self-Initiated vs Public-Initiated calls to preserve analytical clarity in response time metrics
+- Recategorized ~250+ call types into 16 higher-level categories to support meaningful aggregation
+- Verified and corrected geolocation columns to enable accurate mapping
+
+## Tools & Technologies
+
+- **Google BigQuery (SQL):** data querying and transformation, and analysis
+- **LibreOffice Calc and Google Sheets:** Preprocessing timestamps and verifying formatting  
+- **Looker Studio / Tableau (planned):** Visualization and dashboard creation
+- **GitHub:** Version control and public-facing documentation
+
+## Repository Structure
+
+- `data-prep-sql/` — SQL scripts for data cleaning and categorization[^1]  
+- `analysis/` — SQL queries for creating master tables and calculating response times[^2]  
+- `visualizations/` — Placeholder for visualization files and dashboard exports  
+- `docs/` — Project summaries, notes, and final reports
+
+## Sample SQL Queries
+
+Below are examples of key SQL queries used in the project. More detailed scripts are available in the `data-prep-sql/` and `analysis/` folders.
+
+### 1. Creating Served/Unserved Flag
+
+```sql
+-- Example query to create served boolean flag based on arrival time (officer never arrived means call was unserved)
+SELECT *,
+  CASE
+    WHEN CleanTimeArrival IS NULL THEN FALSE
+    ELSE TRUE
+  END AS Served
+FROM `project.dataset.table_name`
+```
+### 2. Calculating Response Times
+```sql
+-- Example query calculating dispatch to arrival time difference in seconds
+SELECT *,
+  TIMESTAMP_DIFF(CleanTimeArrival, CleanTimeDispatch, SECOND) AS DispatchToArriveTime,
+  TIMESTAMP_DIFF(CleanTimeArrival, CleanTimeCreate, SECOND) AS CreateToArriveTime
+FROM `project.dataset.served_calls_table`
+```
+## Notes
+
+- Self-initiated calls comprise a significant portion of the dataset and are analyzed separately due to differences in response metrics.
+- Unserved calls (no officer arrival time) are flagged and excluded from response time calculations.
+- Geolocation data was verified and corrected to ensure accuracy in spatial analysis.
+
+## How to Reproduce
+
+To replicate this project or build on it: 
+
+1. Download 2019-2022 CAD datasets from the [NOLA Open Data Portal](https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-Basic-View/6mc5-nn7g)
+2. Preprocess timestamps using LibreOffice Calc or a paid desktop version of Excel (due to file sizes >100mb), or spreadsheet tool of choice to ensure BigQuery compatibility (convert to DATETIME yyyy-mm-dd hh:mm:ss)
+3. Import cleaned CSVs into BigQuery.
+4. Follow the SQL scripts in the `data-prep-sql/` folder to merge, clean, and categorize the data.
+5. Use the `analysis/` queries to calculate response times and generate master tables.
+6. Optional: Use Tableau or Looker Studio to build visualizations using the exported master tables.
+
+> Note: This project focuses on the 3rd and 4th police districts and filters records accordingly during preprocessing.
+
+## Future Work
+
+- Develop and publish visualizations analyzing call volumes, response times, and category trends
+- Perform geographic mapping of incidents by police district
+- Finalize report summarizing key findings and recommendations
+
+## Data Sources
+
+- [NOLA Open Data Portal - 911 Calls for Service](https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-Basic-View/6mc5-nn7g)
+- [City of New Orleans - COVID-19 Response Orders](https://nola.gov/health/coronavirus/safe-reopening/phases/)
+- [Mardi Gras Parade Schedules (2019–2022)](https://www.mardigrasneworleans.com/parades/schedule)
+
+*This project is ongoing. Updates and improvements will be regularly added to this repository.*
