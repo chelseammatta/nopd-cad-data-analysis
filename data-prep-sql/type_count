@@ -1,10 +1,10 @@
+
 ## TYPETEXT COUNT
 
-This query counted the frequency of each call type and sorted in order from least to most. This query structure was used several times to populate this list.
+This query counts how often each unique call type (`InitialTypeText_Cleaned`) appears in the dataset, sorted in ascending order. The structure of this 
+query was reused multiple times throughout the project to inform cleanup, formatting, renaming, and category consolidation decisions.
 
-This list was used to help inform decisions based on cleanup, formatting, and re-naming similar call types, as well as categorization.
-
-I reduced the number of distinct call types from over 270 to just 73.
+Using this approach, I reduced the number of distinct call types from over **270** to just **73**, enabling more effective aggregation and analysis.
 
 ```sql
 -- count the number of times each type of InitialTypeText_Cleaned appears in the table and order by ascending
@@ -16,5 +16,5 @@ FROM
 GROUP BY
   InitialTypeText_Cleaned
 ORDER BY
-  Count;
+  Count ASC;
 ```
