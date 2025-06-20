@@ -1,0 +1,14 @@
+
+## FILTER FOR ONLY DATA FROM 3RD AND 4TH DISTRICTS
+
+This query filters from all CAD data from 2019-2022 from all districts and returns a table containing only calls from the 3rd and 4th districts.
+
+```sql
+SELECT *
+FROM `melodic-crane-461722-j0.nola_crime.nola_crime_all_2019_2022`
+WHERE
+  PoliceDistrict = 3
+  OR
+  PoliceDistrict = 4;
+```
+This reduced my dataset from over 1.7 million rows to approximately 480,000.
