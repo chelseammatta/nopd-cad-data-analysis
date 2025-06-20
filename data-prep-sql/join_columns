@@ -48,3 +48,22 @@ LEFT JOIN
 ON
   a.CleanTimeCreate = b.CleanTimeCreate;
 ```
+## JOIN LATITUDE AND LONGITUDE COLUMNS
+
+The latitude and longitude columns were also added back into the table for spatial analysis purposes by joining the CleanTimeCreate column.
+
+```sql
+
+CREATE OR REPLACE TABLE `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v1_with_selfinitiated_and_location` AS
+SELECT
+  a.*,
+  b.Longitude,
+  b.Latitude
+FROM
+  `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v1_with_selfinitiated` a
+LEFT JOIN
+  `melodic-crane-461722-j0.nola_crime.call_location_long_lat` b
+ON
+  a.CleanTimeCreate = b.CleanTimeCreate
+ORDER BY CleanTimeCreate;
+```
