@@ -1,0 +1,25 @@
+
+## REFORMAT LOCATION DATA
+
+This query extracts and reformats spatial data from the original Location field, which stores coordinates in the format `POINT (longitude latitude)`. It generates:
+
+- `Cleaned_Location`: a cleaned string version of the geometry
+- `longitude`: the longitude value as a separate column
+- `latitude`: the latitude value as a separate column
+These outputs make the dataset compatible with spatial analysis and map-based visualizations in tools like Looker Studio or Tableau.
+
+```sql
+SELECT
+
+  CleanTimeCreate,
+  Location,
+  REGEXP_REPLACE(Location, r'POINT \(([-\d\. ]+)\)', r'\1') AS Cleaned_Location,
+  SPLIT(REGEXP_REPLACE(Location, r'POINT \(([-\d\. ]+)\)', r'\1'), ' ')[OFFSET(0)] AS longitude,
+  SPLIT(REGEXP_REPLACE(Location, r'POINT \(([-\d\. ]+)\)', r'\1'), ' ')[OFFSET(1)] AS latitude
+FROM
+  `melodic-crane-461722-j0.nola_crime.2019_2022_nola_crime_3rd_4th`
+WHERE
+  Location IS NOT NULL
+ORDER BY
+  CleanTimeCreate;
+```
