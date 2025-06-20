@@ -1,0 +1,80 @@
+
+## CATEGORIZE CALL TYPES
+
+This query categorizes the cleaned and normalized `InitialTypeText_Cleaned` values and creates a new column, "Category", based on the nature of the call as indicated by the TypeText.
+
+```sql
+CREATE OR REPLACE TABLE `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v2_with_category` AS
+SELECT
+  *,
+  CASE
+    WHEN InitialTypeText_Cleaned = 'ALARM' THEN 'ALARM'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'BURGLARY', 'THEFT', 'AUTO THEFT', 'CRIMINAL DAMAGE',
+      'LOST PROPERTY', 'ABANDONED PROPERTY', 'VEHICLE RECOVERY',
+      'POSSESSION OF STOLEN PROPERTY'
+    ) THEN 'PROPERTY'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'COMPLAINT OTHER', 'DISTURBANCE', 'NOISE COMPLAINT',
+      'WELFARE CHECK', 'DISORDERLY CONDUCT', 'CIVIL DISPUTE',
+      'TRUANT VIOLATION', 'PUBLIC DETAIL', 'PUBLIC GATHERING',
+      'PROTEST', 'PATROL'
+    ) THEN 'COMMUNITY'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'SUSPICIOUS PERSON', 'SUSPICIOUS VEHICLE'
+    ) THEN 'SUSPICIOUS'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'TRAFFIC STOP', 'TRAFFIC INCIDENT', 'HIT & RUN',
+      'RECKLESS DRIVING', 'DRIVING WHILE INTOXICATED',
+      'TRAFFIC COMPLAINT', 'TRAFFIC DETAIL',
+      'DISABLED VEHICLE', 'VEHICLE PURSUIT'
+    ) THEN 'TRAFFIC'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'UNKNOWN', 'SEX OFFENDER REGISTRATION CHECK'
+    ) THEN 'UNKNOWN/UNCLASSIFIED'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'ASSAULT', 'BATTERY', 'FIGHT', 'ROBBERY',
+      'CARJACKING', 'HOMICIDE', 'HOME INVASION',
+      'KIDNAPPING', 'THREATS'
+    ) THEN 'VIOLENT'
+
+    WHEN InitialTypeText_Cleaned = 'MUTUAL AID' THEN 'MUTUAL AID'
+
+    WHEN InitialTypeText_Cleaned = 'DOMESTIC VIOLENCE' THEN 'DOMESTIC VIOLENCE'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'FIRE', 'FLOOD EVENT', 'EXPLOSION', 'ARSON'
+    ) THEN 'HAZARD RESPONSE'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'WARRANT', 'VIOLATION OF PROTECTION ORDER'
+    ) THEN 'JUDICIAL'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'MEDICAL', 'OVERDOSE', 'MENTAL HEALTH PATIENT',
+      'SUICIDE', 'SUICIDE ATTEMPT', 'SUICIDE THREAT',
+      'DEATH'
+    ) THEN 'MEDICAL/MENTAL'
+
+    WHEN InitialTypeText_Cleaned = 'OFFICER NEEDS ASSISTANCE' THEN 'OFFICER SAFETY'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'RAPE', 'SEXUAL ASSAULT', 'VIDEO VOYEURISM', 'OBSCENITY'
+    ) THEN 'SEXUAL'
+
+    WHEN InitialTypeText_Cleaned IN (
+      'DRUG VIOLATIONS', 'DRUG ACTIVITY',
+      'ILLEGAL CARRYING OF WEAPONS', 'ILLEGAL WEAPONS'
+    ) THEN 'CONTRABAND VIOLATION'
+
+    ELSE 'UNKNOWN/UNCLASSIFIED'
+  END AS Category
+FROM
+  `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v1_with_selfinitiated_and_location`;
+```
