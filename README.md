@@ -19,7 +19,7 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
 ## Project Status
 
 - Cleaned and standardized 458,255 CAD records across 4 years
-- Removed 11,213 DUPLICATE rows, 16, 521 VOID rows, and 230 TEST INCIDENT rows
+- Removed 11,213 DUPLICATE rows, 16,521 VOID rows, and 230 TEST INCIDENT rows
 - Categorized 73 unique call types into 16 major categories
 - Created four master tables:
   - All Calls (with served/unserved and self-initiated flags)
@@ -28,6 +28,17 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
   - Served, Public-Initiated
 - Response time metrics calculated (served only)
 - Next steps: developing visualizations and detailed analysis
+
+## Preliminary Observations
+
+Early exploration of the cleaned dataset revealed several important patterns that shaped the direction of the project:
+
+- **Self-initiated calls accounted for a large portion of all records**, but differed significantly in nature and response dynamics from public-initiated calls. This led to the decision to analyze them separately when calculating response times and evaluating unserved incidents.
+- **Certain call types had multiple redundant or inconsistent labels**, such as different entries for assault, burglary, or alarms (i.e. aggravated assault, burglary (residence), or alarm (residential)). This complexity made clear the need to group similar call types into standardized categories for meaningful aggregation and trend analysis.
+- **A significant number of calls lacked arrival timestamps**, signaling either officer non-response or poor data entry. These calls were flagged as unserved, and this insight influenced the decision to exclude them from response time calculation and analyze them as a separate group.
+- **Timestamps varied in formatting across years**, especially in the raw CSV files. This required manual preprocessing in LibreOffice Calc to ensure BigQuery compatibility and led to the development of a consistent pipeline for timestamp standardization.
+
+These early insights not only shaped the project's categorization system, filtering logic, and summary table design, but also emphasized the importance of separating data types (e.g., served vs unserved, public vs self-initiated) for reliable and interpretable results.
 
 ## Key Challenges & Decisions
 
@@ -47,8 +58,8 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
 
 ## Repository Structure
 
-- `data-prep-sql/` — SQL scripts for data cleaning and categorization[^1]  
-- `analysis/` — SQL queries for creating master tables and calculating response times[^2]  
+- `data-prep-sql/` — SQL scripts for data cleaning and categorization  
+- `analysis/` — SQL queries for creating master tables and calculating response times  
 - `visualizations/` — Placeholder for visualization files and dashboard exports  
 - `docs/` — Project summaries, notes, and final reports
 
@@ -78,7 +89,6 @@ FROM `project.dataset.served_calls_table`
 ## Notes
 
 - Self-initiated calls comprise a significant portion of the dataset and are analyzed separately due to differences in response metrics.
-- Unserved calls (no officer arrival time) are flagged and excluded from response time calculations.
 - Geolocation data was verified and corrected to ensure accuracy in spatial analysis.
 
 ## How to Reproduce
@@ -105,5 +115,9 @@ To replicate this project or build on it:
 - [NOLA Open Data Portal - 911 Calls for Service](https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-Basic-View/6mc5-nn7g)
 - [City of New Orleans - COVID-19 Response Orders](https://nola.gov/health/coronavirus/safe-reopening/phases/)
 - [Mardi Gras Parade Schedules (2019–2022)](https://www.mardigrasneworleans.com/parades/schedule)
+
+## Skills Demonstrated
+
+- SQL, Data Cleaning, Categorization, Data Modeling, Response Time Analysis, Geospatial Prep, Data Documentation
 
 *This project is ongoing. Updates and improvements will be regularly added to this repository.*
