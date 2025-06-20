@@ -1,0 +1,15 @@
+
+## FILTER SERVED
+
+This query filters out unserved calls, keeping only those with an officer response (i.e., `Served = TRUE`).
+
+This allows focused analysis on incidents where police actually responded, supporting accurate metrics on response times and resource allocation.
+
+```sql
+SELECT *
+
+FROM `melodic-crane-461722-j0.nola_crime.nopd_with_servedboolean` 
+
+WHERE Served = TRUE
+ORDER BY CleanTimeCreate;
+```
