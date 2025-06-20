@@ -1,0 +1,14 @@
+
+## FILTER OFFICER-INITIATED CALLS
+
+This query filters out public-initiated calls (`SelfInitiated = FALSE`), keeping only those initiated by officers.
+
+Similar query structure was applied to filter out self-initiated calls, which resulted in 2 distinct lists: calls that were served and initiated by police, and calls that were served and initiated by the public.
+
+```sql
+SELECT *
+FROM `melodic-crane-461722-j0.nola_crime.nopd_with_geo_corrected`
+WHERE SelfInitiated = FALSE
+ORDER BY CleanTimeCreate;
+```
+This table supports comparisons between officer-driven and public-driven call response patterns.
