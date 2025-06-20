@@ -1,7 +1,8 @@
 
 ## REMOVE DISPOSITION TEXT OUTLIERS
 
-This query removes the DispositionText irrelevant or test data rows, including Test Incident, VOID and DUPLICATE. These were removed because they were not applicable for my analysis purposes.
+This query removes the DispositionText irrelevant or test data rows, including Test Incident, VOID and DUPLICATE. These were removed because 
+they were not applicable for my analysis purposes.
 
 ```sql
 -- removes Test Incident (spelt two different ways in table), VOID, and DUPLICATE disposition calls
