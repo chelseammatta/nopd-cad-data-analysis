@@ -1,0 +1,50 @@
+
+## JOIN SELFINITIATED COLUMN
+
+This query joins the SelfInitiated boolean column back into my dataset by joining on the CleanTimeCreate timestamp. 
+
+The SelfInitiated flag is an important indicator for distinguishing police calls initiated by officers themselves versus those initiated by the public.
+
+The resulting table supports analysis by enabling creation of two master datasets: one for self-initiated calls with officer response and one for public-initiated calls with officer respoinse.
+
+
+```sql
+CREATE OR REPLACE TABLE `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v1_with_selfinitiated` AS
+SELECT
+  a.CleanTimeCreate,
+  b.SelfInitiated,
+  b.CleanTimeDispatch,
+  b.CleanTimeArrival,
+  b.CleanTimeClosed,
+  a.DispositionText,
+  a.InitialType,
+  a.InitialTypeText_Cleaned,
+  a.InitialPriority,
+  a.PoliceDistrict,
+  a.CreateMonth,
+  a.CreateDay,
+  a.CreateYear,
+  a.CreateHour,
+  a.CreateMinute,
+  a.DispatchMonth,
+  a.DispatchDay,
+  a.DispatchYear,
+  a.DispatchHour,
+  a.DispatchMinute,
+  a.ArrivalMonth,
+  a.ArrivalDay,
+  a.ArrivalYear,
+  a.ArrivalHour,
+  a.ArrivalMinute,
+  a.ClosedMonth,
+  a.ClosedDay,
+  a.ClosedYear,
+  a.ClosedHour,
+  a.ClosedMinute
+FROM
+  `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v1` a
+LEFT JOIN
+  `melodic-crane-461722-j0.nola_crime.2019_2022_nopd_crime_3_4_time` b
+ON
+  a.CleanTimeCreate = b.CleanTimeCreate;
+```
