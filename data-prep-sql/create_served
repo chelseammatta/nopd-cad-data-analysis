@@ -1,0 +1,21 @@
+
+## CREATE SERVED COLUMN
+
+This query creates a new column named Served that flags whether a call received an officer response.
+
+It evaluates the CleanTimeArrival timestamp -- if the field is not NULL, the call is marked as TRUE (served); otherwise, it is FALSE (unserved).
+
+This distinction is critical for downstream analyses, including identifying service gaps, calculating average response times, and measuring overall resource allocation. Over 11,000 calls in the dataset were found to be unserved.
+
+```sql
+SELECT 
+  *,
+  CASE
+    WHEN CleanTimeArrival IS NOT NULL THEN TRUE
+    ELSE FALSE
+  END AS Served
+
+FROM `melodic-crane-461722-j0.nola_crime.nopd_cleaned_data_v2_with_geo` 
+
+ORDER BY CleanTimeCreate;
+```
