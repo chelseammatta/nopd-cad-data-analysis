@@ -1,0 +1,101 @@
+```sql
+-- create a new table called nola_crime_all_2019_2022 by combining tables 2019_nopd, 2020_nopd, 2021_nopd, and 2022_nopd
+SELECT
+  NOPD_Item,
+  Type,
+  TypeText,
+  Priority,
+  MapX,
+  MapY,
+  CleanTimeCreate,
+  CleanTimeDispatch,
+  CleanTimeArrival,
+  CleanTimeClosed,
+  Disposition,
+  DispositionText,
+  InitialType,
+  InitialTypeText,
+  InitialPriority,
+  SelfInitiated,
+  Beat,
+  BLOCK_ADDRESS,
+  Zip,
+  PoliceDistrict,
+  Location
+FROM
+  `melodic-crane-461722-j0`.`nola_crime`.`2019_nopd`
+UNION ALL
+SELECT
+  NOPD_Item,
+  Type,
+  TypeText,
+  Priority,
+  MapX,
+  MapY,
+  CleanTimeCreate,
+  CleanTimeDispatch,
+  CleanTimeArrive,
+  CleanTimeClosed,
+  Disposition,
+  DispositionText,
+  InitialType,
+  InitialTypeText,
+  InitialPriority,
+  SelfInitiated,
+  Beat,
+  BLOCK_ADDRESS,
+  Zip,
+  PoliceDistrict,
+  Location
+FROM
+  `melodic-crane-461722-j0`.`nola_crime`.`2020_nopd`
+UNION ALL
+SELECT
+  NOPD_Item,
+  Type,
+  TypeText,
+  Priority,
+  MapX,
+  MapY,
+  CleanTimeCreate,
+  CleanTimeDispatch,
+  CleanTimeArrive,
+  CleanTimeClosed,
+  Disposition,
+  DispositionText,
+  InitialType,
+  InitialTypeText,
+  InitialPriority,
+  SelfInitiated,
+  Beat,
+  BLOCK_ADDRESS,
+  Zip,
+  PoliceDistrict,
+  Location
+FROM
+  `melodic-crane-461722-j0`.`nola_crime`.`2021_nopd`
+UNION ALL
+SELECT
+  NOPD_Item,
+  Type,
+  TypeText,
+  Priority,
+  MapX,
+  MapY,
+  CleanTimeCreate,
+  CleanTimeDispatch,
+  CleanTimeArrive,
+  CleanTimeClosed,
+  Disposition,
+  DispositionText,
+  InitialType,
+  InitialTypeText,
+  InitialPriority,
+  SelfInitiated,
+  Beat,
+  BLOCK_ADDRESS,
+  Zip,
+  PoliceDistrict,
+  Location
+FROM
+  `melodic-crane-461722-j0`.`nola_crime`.`2022_nopd`;
