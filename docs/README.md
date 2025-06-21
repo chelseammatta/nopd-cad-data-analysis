@@ -2,7 +2,7 @@
 
 This document outlines the data cleaning, preparation, and enrichment process used in the NOPD Computer-Aided Dispatch (CAD) dataset analysis. The dataset includes over 1 million 911 call records spanning 2019–2022.
 
-![Data Cleaning Flowchart](data_cleaning_flowchart.png)
+![Data Cleaning Flowchart](docs/data_cleaning_flowchart.png)
 
 ---
 
