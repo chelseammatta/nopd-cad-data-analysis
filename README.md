@@ -20,7 +20,7 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
 
 - Cleaned and standardized 458,255 CAD records across 4 years (after filtering to the 3rd and 4th districts)
 - Removed 11,213 DUPLICATE rows, 16,521 VOID rows, and 230 TEST INCIDENT rows
-- Categorized 73 unique call types into 16 major categories
+- Categorized 73 unique call types into 15 major categories
 - Created four master tables:
   - All Calls (with served/unserved and self-initiated flags)
   - Unserved calls
@@ -28,6 +28,27 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
   - Served, Public-Initiated
 - Response time metrics calculated (served only)
 - Next steps: developing visualizations and detailed analysis
+
+- ## Call Category Definitions
+
+| Category          | Description / Examples                            |
+|-------------------|-------------------------------------------------|
+| Judicial          | Warrants, attachments, legal documents            |
+| Community         | Area checks, missing person, noise complaint, etc.|
+| Traffic           | Traffic stops, accidents, violations              |
+| Property          | Burglary, theft, vandalism                        |
+| Alarm             | Residential, commercial alarms                    |
+| Unknown           | Calls with unspecified or unclear category        |
+| Suspicious        | Suspicious persons or activity                    |
+| Violent           | Assault, robbery, violent crimes                  |
+| Hazard            | Fire, Flood, HAZMAT, Bomb Threat/Scare, etc.      |
+| Domestic Violence | Calls related to domestic disputes                |
+| Medical/Mental    | Medical emergencies, mental health crises         |
+| Sexual            | Sexual assault or abuse                           |
+| Contraband        | Drug and Weapons violations                       |
+| Mutual Aid        | Assistance requests between agencies              |
+| Officer Safety    | Incidents involving officer risk or threats       |
+
 
 ## Preliminary Observations
 
@@ -46,7 +67,7 @@ These early insights not only shaped the project's categorization system, filter
 - Removed ~23,000 invalid records (VOID, DUPLICATE, TEST INCIDENT) to improve data quality
 - Designed a Served/Unserved flag based on officer arrival data to reflect response coverage
 - Separated Self-Initiated vs Public-Initiated calls to preserve analytical clarity in response time metrics
-- Recategorized ~250+ call types into 16 higher-level categories to support meaningful aggregation
+- Recategorized ~250+ call types into 15 higher-level categories to support meaningful aggregation
 - Verified and corrected geolocation columns to enable accurate mapping
 
 ## Findings & Visualizations
@@ -95,9 +116,24 @@ In 2020, the NOPD — like many departments nationwide — likely faced **staffi
 
 By 2022, the unserved rate had declined from 2020 but remained above pre-pandemic levels, suggesting that **longer-term operational shifts** may still be affecting service delivery. These findings raise important questions about how public safety agencies handle demand under strain — and how consistently different branches of emergency response are able to meet public expectations for service.
 
+![Unserved Count by Category](docs/unserved_count.png)
+
+Between 2019 and 2022 in the 3rd and 4th police districts, there were **15,194 unserved Judicial calls** (warrants, attachments, etc.) and **12,428 unserved Community calls** (area checks, foot patrols, and similar). These two categories stand out as the most frequently unserved, being more than twice as likely to lack officer arrival compared to other categories.
+
+Following those, **Traffic calls** had 3,912 unserved incidents, and **Property calls** had 3,214 unserved. Lower but notable numbers of unserved calls appeared in categories such as Alarm, Unknown, Suspicious Person, Violent, Hazard, and Domestic Violence.
+
+The predominance of unserved Judicial and Community calls likely reflects operational realities: Judicial calls are often non-emergency and scheduled rather than immediate response incidents, while Community calls tend to be proactive or preventative. Both may be deprioritized or handled in ways that do not generate a standard “arrival” timestamp in the CAD system.
+
+This pattern underscores how non-emergency or administrative call types can skew unserved call statistics and suggests a need for deeper investigation into departmental workflows and response protocols across different call categories.
+
+
 ---
 
 More findings and visualizations will be added as the project progresses.
+
+## Conclusion
+
+*coming soon*
 
 ## Tools & Technologies
 
