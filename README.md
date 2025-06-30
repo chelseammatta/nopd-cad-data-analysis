@@ -27,7 +27,7 @@ As a former EMT who worked in the neighborhoods covered by the 3rd and 4th polic
   - Served, Self-Initiated
   - Served, Public-Initiated
 - Response time metrics calculated (served only)
-- Next steps: developing visualizations and detailed analysis
+- Next steps: GIS Mapping
 
 - ## Call Category Definitions
 
