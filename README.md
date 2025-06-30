@@ -59,6 +59,16 @@ Based on my personal experience working in emergency response during the COVID-1
 
 This abrupt return to baseline could be due to a range of factors. One possibility is that DV incidents were still occurring but not being reported — potentially due to isolation, fear, or lack of access to resources. To better understand this pattern, a deeper analysis using electronic police report (EPR) data from the same districts and time frame would be valuable. Comparing EPR and CAD data could reveal discrepancies in how incidents were reported or classified, and help determine whether the apparent decline in DV calls reflects a true decrease or a shift in reporting behavior.
 
+### Response Times by Category
+
+![Dispatch to Arrival Time by Call Category (minutes)](docs/response_times.png)
+
+As expected, call categories involving more life-threatening situations generally received faster police response times. Officer response metrics are influenced by a range of factors, including distance to the call, traffic, weather, and what the officer was doing at the time of dispatch. Without access to these operational variables, it's difficult to explain the exact reasons behind specific response patterns.
+
+One notable finding is that *medical and mental-health related calls consistently had the shortest average response times*. This data does *not* reflect EMS or fire department response times, which are typically slower due to the size and limitations of emergency vehicles. At the other end of the spectrum, *property-related crimes* received the slowest response times -- likely reflecting their lower urgency and risk to public safety.
+
+This chart includes only *public-initiated calls* from the 3rd and 4th police districts between 2019 and 2022, and only those with a valid dispatch and arrival time. *Officer-initiated calls were excluded* because they often lack complete or meaningful dispatch/arrival timestamps -- likely due to how the NOPD CAD system logs self-initiated activity.
+
 ---
 
 More findings and visualizations will be added as the project progresses.
