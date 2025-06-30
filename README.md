@@ -82,6 +82,17 @@ The NOPD 3rd and 4th Districts typically see heavy Mardi Gras activity, as many 
 
 Around the same period, **alarm-related calls** increased. While no specific ordinances or procedural changes are documented, this rise may reflect shifts in alarm company protocols or increased enforcement efforts targeting false alarms.
 
+
+### Served vs. Unserved Calls
+
+![Calls Served By Year](docs/calls_served_by_year.png)
+
+These pie charts illustrate the proportion of **public-initiated 911 calls** that went unserved (i.e., no recorded officer arrival) in the 3rd and 4th police districts between 2019 and 2022. While call volumes decreased overall in 2020 due to COVID-19 lockdowns, the percentage of calls that went unserved **rose sharply**, reaching a peak of **21.4%** — the highest of any year analyzed.
+
+This spike in unserved calls is likely a reflection of **COVID-related disruptions** to NOPD operations. During the early months of the pandemic, many departments nationwide faced **staffing shortages**, with officers out sick, quarantined, or restricted from in-person contact. At the same time, police may have implemented new **triaging protocols**, prioritizing life-threatening and high-risk calls (such as medical emergencies or domestic violence) while **deprioritizing lower-priority or non-urgent incidents** (such as property crimes or alarms). In some cases, officers may have responded via phone or simply closed out calls without dispatching a unit — these would still be counted as “unserved” in the CAD data due to the lack of arrival timestamp.
+
+By 2022, the rate of unserved calls declined but remained above pre-pandemic levels, suggesting that **operational impacts may have lingered** beyond the height of COVID. These response gaps may have implications for public trust and the perceived reliability of police services, particularly in underserved neighborhoods or during times of crisis.
+
 ---
 
 More findings and visualizations will be added as the project progresses.
