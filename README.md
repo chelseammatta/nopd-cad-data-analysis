@@ -69,6 +69,19 @@ One notable finding is that *medical and mental-health related calls consistentl
 
 This chart includes only *public-initiated calls* from the 3rd and 4th police districts between 2019 and 2022, and only those with a valid dispatch and arrival time. *Officer-initiated calls were excluded* because they often lack complete or meaningful dispatch/arrival timestamps -- likely due to how the NOPD CAD system logs self-initiated activity.
 
+
+### Call Volume by Category
+
+![911 Call Volume Over Time By Category](docs/call_volume_by_category.png)
+
+This visual shows a clear spike in 911 call volume across nearly all categories — except traffic-related calls — in **March 2020**, coinciding with the start of the **COVID-19 lockdown** in New Orleans, announced on **March 16, 2020**. Following this spike, call volumes declined across most categories and remained suppressed until the city began gradually reopening and residents returned to work. Notably, several call types never returned to their pre-pandemic volumes, including **Contraband Violations**, **Mutual Aid**, **Traffic**, and **Property** calls.
+
+The NOPD 3rd and 4th Districts typically see heavy Mardi Gras activity, as many major parades march east along St. Charles Avenue toward downtown. However, careful examination of the data reveals **no consistent increase** in call volume during Mardi Gras periods, suggesting that parade season does not significantly impact police workload in these districts.
+
+**Traffic-related calls** followed a distinct pattern. Starting in **January 2021**, these calls rose steadily, aligning with the city's **Phase 2 reopening**. This upward trend was interrupted by a sharp drop in **September 2021**, likely reflecting the impact of [**Operation Golden Eagle**](https://www.wdsu.com/article/new-orleans-louisiana-state-police-nopd-crime-results/37804087), an NOPD initiative launched during summer 2021 to crack down on drag racing and other "summer crimes." This decline suggests that the operation may have temporarily deterred street racing and related activity.
+
+Around the same period, **alarm-related calls** increased. While no specific ordinances or procedural changes are documented, this rise may reflect shifts in alarm company protocols or increased enforcement efforts targeting false alarms.
+
 ---
 
 More findings and visualizations will be added as the project progresses.
