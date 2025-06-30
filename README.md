@@ -116,15 +116,15 @@ In 2020, the NOPD — like many departments nationwide — likely faced **staffi
 
 By 2022, the unserved rate had declined from 2020 but remained above pre-pandemic levels, suggesting that **longer-term operational shifts** may still be affecting service delivery. These findings raise important questions about how public safety agencies handle demand under strain — and how consistently different branches of emergency response are able to meet public expectations for service.
 
-![Unserved Count by Category](docs/unserved_count.png)
+![Unserved Count by Category](docs/unserved_calls_by_category.png)
 
-Between 2019 and 2022 in the 3rd and 4th police districts, there were **15,194 unserved Judicial calls** (warrants, attachments, etc.) and **12,428 unserved Community calls** (area checks, foot patrols, and similar). These two categories stand out as the most frequently unserved, being more than twice as likely to lack officer arrival compared to other categories.
+This bar graph shows the total number of **public-initiated 911 calls that went unserved** — meaning no recorded officer arrival — in the 3rd and 4th police districts from 2019 to 2022. Unlike earlier analyses that included all calls, this chart focuses exclusively on calls where the public requested police assistance, providing a clearer picture of true service gaps.
 
-Following those, **Traffic calls** had 3,912 unserved incidents, and **Property calls** had 3,214 unserved. Lower but notable numbers of unserved calls appeared in categories such as Alarm, Unknown, Suspicious Person, Violent, Hazard, and Domestic Violence.
+The data reveals a surprisingly low total of only **68 unserved public-initiated calls** across four years. Nearly 60% of these are categorized as **Unknown/Unclassified**, which may indicate issues with call categorization or record-keeping rather than true service failures.
 
-The predominance of unserved Judicial and Community calls likely reflects operational realities: Judicial calls are often non-emergency and scheduled rather than immediate response incidents, while Community calls tend to be proactive or preventative. Both may be deprioritized or handled in ways that do not generate a standard “arrival” timestamp in the CAD system.
+The next most frequent category is **Community-related calls** (e.g., area checks, foot patrol requests), accounting for 25 unserved calls. The remaining unserved calls are spread across Judicial, Mutual Aid, Traffic, and Domestic Violence categories — each with only one or two instances. Some of these may reflect occasional misclassification errors between public-initiated and officer-initiated flags.
 
-This pattern underscores how non-emergency or administrative call types can skew unserved call statistics and suggests a need for deeper investigation into departmental workflows and response protocols across different call categories.
+Overall, this refined analysis suggests that the NOPD in these districts is largely responsive to public requests, with very few calls going unserved when the public initiates contact. It also highlights the importance of careful data cleaning and categorization to avoid misleading conclusions.
 
 
 ---
