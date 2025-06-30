@@ -129,11 +129,21 @@ Overall, this refined analysis suggests that the NOPD in these districts is larg
 
 ---
 
-More findings and visualizations will be added as the project progresses.
+More findings and visualizations may be added in the future.
 
 ## Conclusion
 
-*coming soon*
+This project set out to explore how police response patterns, call volume, and service delivery evolved in two of New Orleans' most active police districts from 2019 to 2022. Drawing on over 450,000 cleaned CAD records, I examined how major events — like the COVID-19 lockdown and Mardi Gras — impacted emergency service demands, and how the NOPD allocated its resources in response.
+
+A few themes emerged across nearly every visualization. The **onset of the COVID-19 pandemic** in March 2020 triggered sharp disruptions in call volume, response rates, and service consistency. Some call types — such as **domestic violence** — spiked briefly, while others (like **traffic** and **property** crimes) declined and never fully returned to pre-pandemic levels. These shifts appear closely tied to citywide lockdowns, mobility changes, and later, policy efforts like **Operation Golden Eagle**, which likely contributed to reduced traffic enforcement during specific periods.
+
+One of the most unexpected findings involved the rate of **unserved 911 calls** — a metric that initially appeared alarmingly high. Coming from an **EMS background**, where almost every call is expected to receive a response, I was surprised to see unserved rates above 20% in 2020. But upon closer analysis — especially by separating **public-initiated** from **officer-initiated** calls — the picture became clearer: the vast majority of unserved calls came from officer-initiated activity (such as proactive patrols or administrative tasks), not from the public seeking help. In fact, only **68 public-initiated calls** across all four years went unserved, a figure that reflects much stronger service coverage than I initially assumed.
+
+In exploring **response times**, I found patterns that aligned with practical frontline experience: calls involving **mental health or medical concerns** were typically handled faster than **property-related incidents**, which tend to be deprioritized. These nuances, while not always obvious in raw data, became more interpretable through careful categorization and contextual framing — especially when comparing self-initiated vs. public calls and using clearly defined incident groupings.
+
+Ultimately, this project was both a technical and personal effort. My experience in emergency response shaped the questions I asked, they way I interpreted gaps or anomalies, and the urgency I brought to understanding how well the system serves those in crisis. By transforming a raw and complex dataset into structured insights and compelling visuals, I aimed to build a tool not just for analysis, but for **accountability, transparency, and informed decision-making** in public safety.
+
+This work demonstrates the importance of bridging lived experience with analytical rigor — and the value of using data not just to answer questions, but to ask better ones.
 
 ## Tools & Technologies
 
@@ -201,6 +211,7 @@ To replicate this project or build on it:
 - [NOLA Open Data Portal - 911 Calls for Service](https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-Basic-View/6mc5-nn7g)
 - [City of New Orleans - COVID-19 Response Orders](https://nola.gov/health/coronavirus/safe-reopening/phases/)
 - [Mardi Gras Parade Schedules (2019–2022)](https://www.mardigrasneworleans.com/parades/schedule)
+- [Operation Golden Eagle](https://www.wdsu.com/article/new-orleans-louisiana-state-police-nopd-crime-results/37804087)
 
 ## Skills Demonstrated
 
