@@ -93,7 +93,7 @@ This chart includes only *public-initiated calls* from the 3rd and 4th police di
 
 ### Call Volume by Category
 
-![911 Call Volume Over Time By Category](docs/call_volume_by_category.png)
+![911 Call Volume Over Time By Category](docs/call_volume_over_time.png)
 
 This visual shows a clear spike in 911 call volume across nearly all categories — except traffic-related calls — in **March 2020**, coinciding with the start of the **COVID-19 lockdown** in New Orleans, announced on **March 16, 2020**. Following this spike, call volumes declined across most categories and remained suppressed until the city began gradually reopening and residents returned to work. Notably, several call types never returned to their pre-pandemic volumes, including **Contraband Violations**, **Mutual Aid**, **Traffic**, and **Property** calls.
 
