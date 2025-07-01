@@ -82,7 +82,7 @@ This abrupt return to baseline could be due to a range of factors. One possibili
 
 ### Response Times by Category
 
-![Dispatch to Arrival Time by Call Category (minutes)](docs/response_times.png)
+![Dispatch to Arrival Time by Call Category (minutes)](docs/response_time.png)
 
 As expected, call categories involving more life-threatening situations generally received faster police response times. Officer response metrics are influenced by a range of factors, including distance to the call, traffic, weather, and what the officer was doing at the time of dispatch. Without access to these operational variables, it's difficult to explain the exact reasons behind specific response patterns.
 
