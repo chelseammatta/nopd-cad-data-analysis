@@ -116,7 +116,7 @@ In 2020, the NOPD — like many departments nationwide — likely faced **staffi
 
 By 2022, the unserved rate had declined from 2020 but remained above pre-pandemic levels, suggesting that **longer-term operational shifts** may still be affecting service delivery. These findings raise important questions about how public safety agencies handle demand under strain — and how consistently different branches of emergency response are able to meet public expectations for service.
 
-![Unserved Count by Category](docs/unserved_calls_by_category.png)
+![Unserved Count by Category](docs/unserved_by_category.png)
 
 This bar graph shows the total number of **public-initiated 911 calls that went unserved** — meaning no recorded officer arrival — in the 3rd and 4th police districts from 2019 to 2022. Unlike earlier analyses that included all calls, this chart focuses exclusively on calls where the public requested police assistance, providing a clearer picture of true service gaps.
 
