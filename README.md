@@ -106,7 +106,7 @@ Around the same period, **alarm-related calls** increased. While no specific ord
 
 ### Served vs. Unserved Calls
 
-![Calls Served By Year](docs/calls_served_by_year.png)
+![Calls Served By Year](docs/served_vs_unserved_year.png)
 
 These pie charts illustrate the proportion of **public-initiated 911 calls** that went unserved (i.e., no recorded officer arrival) in the 3rd and 4th police districts between 2019 and 2022. While total call volumes decreased in 2020 during the height of the COVID-19 pandemic, the percentage of calls that went unserved **increased significantly**, reaching a peak of **21.4%** — the highest of any year analyzed.
 
