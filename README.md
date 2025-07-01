@@ -74,7 +74,7 @@ These early insights not only shaped the project's categorization system, filter
 
 ### Domestic Violence Spike During COVID-19 Lockdown
 
-![Domestic Violence Calls Over Time](docs/dv_calls_over_time.png)
+![Domestic Violence Calls Over Time](docs/dv_calls.png)
 
 Based on my personal experience working in emergency response during the COVID-19 pandemic and lockdown, I hypothesized that domestic violence (DV) calls would show a sharp increase at the onset of lockdown, followed by a slow but steady decline back to pre-pandemic levels over time. However, the visualization revealed a different pattern. There was a clear spike in DV calls in March 2020, but the numbers returned to baseline by April 2020, suggesting the increase was temporary.
 
