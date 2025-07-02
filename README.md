@@ -80,6 +80,8 @@ Based on my personal experience working in emergency response during the COVID-1
 
 This abrupt return to baseline could be due to a range of factors. One possibility is that DV incidents were still occurring but not being reported — potentially due to isolation, fear, or lack of access to resources. To better understand this pattern, a deeper analysis using electronic police report (EPR) data from the same districts and time frame would be valuable. Comparing EPR and CAD data could reveal discrepancies in how incidents were reported or classified, and help determine whether the apparent decline in DV calls reflects a true decrease or a shift in reporting behavior.
 
+Beyond the March 2020 spike, DV calls in the 3rd and 4th districts showed a **repeating rise-and-fall pattern every 6 to 7 months** from mid-2020 through 2022. This cyclicality may reflect broader patterns seen in domestic violence dynamics, such as recurring stress cycles, financial pressure, or fluctuations in service access. Research has shown that economic strain, housing instability, and relationship escalation patterns can all contribute to periodic increases in DV reporting, even outside of major events like lockdowns. Further investigation would be needed to confirm the drivers of this pattern in New Orleans specifically.
+
 ### Response Times by Category
 
 ![Dispatch to Arrival Time by Call Category (minutes)](docs/response_time.png)
