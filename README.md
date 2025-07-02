@@ -84,11 +84,13 @@ This abrupt return to baseline could be due to a range of factors. One possibili
 
 ![Dispatch to Arrival Time by Call Category (minutes)](docs/response_time.png)
 
-As expected, call categories involving more life-threatening situations generally received faster police response times. Officer response metrics are influenced by a range of factors, including distance to the call, traffic, weather, and what the officer was doing at the time of dispatch. Without access to these operational variables, it's difficult to explain the exact reasons behind specific response patterns.
+Interestingly, the fastest average police response times were not associated with traditionally high-risk emergencies, but rather with calls categorized as **suspicious activity** (08:13), **alarm calls** (08:26), **unknown/unclassified** (08:32), and **community calls** (08:44). One possible explanation is that these categories tend to occur less frequently than others, so when they are dispatched, it's more likely that an officer is nearby and unassigned. In such cases, availability — not just urgency — may drive faster response.
 
-One notable finding is that *medical and mental-health related calls consistently had the shortest average response times*. This data does *not* reflect EMS or fire department response times, which are typically slower due to the size and limitations of emergency vehicles. At the other end of the spectrum, *property-related crimes* received the slowest response times -- likely reflecting their lower urgency and risk to public safety.
+Slower response times were seen for **property crimes** (17:29), **sexual offenses** (14:38), **contraband violations** (14:00), and **domestic violence** (13:44). These longer delays may be linked to higher overall call volumes in these categories or their relative position in dispatch triage, especially when no immediate threat is reported.
 
-This chart includes only *public-initiated calls* from the 3rd and 4th police districts between 2019 and 2022, and only those with a valid dispatch and arrival time. *Officer-initiated calls were excluded* because they often lack complete or meaningful dispatch/arrival timestamps -- likely due to how the NOPD CAD system logs self-initiated activity.
+**Medical and mental health-related** calls fell near the middle of the response time range — a finding that might seem surprising. However, it's important to understand that these do **not** typically include high-priority injuries like shootings or assaults, which are usually categorized under **violent crime**. From the police perspective, a **medical** call usually signals need to assist EMS or to secure the scene before EMS arrives, rather than to directly intervene in a critical medical emergency.
+
+This chart includes only **public-initiated** calls from the **3rd and 4th police districts** between **2019 and 2022**, and only those calls with valid dispatch and arrival timestamps. **Self-initiated officer calls** were excluded due to inconsistent or missing timing data in the NOPD CAD system.
 
 
 ### Call Volume by Category
@@ -102,6 +104,8 @@ The NOPD 3rd and 4th Districts typically see heavy Mardi Gras activity, as many 
 **Traffic-related calls** followed a distinct pattern. Starting in **January 2021**, these calls rose steadily, aligning with the city's **Phase 2 reopening**. This upward trend was interrupted by a sharp drop in **September 2021**, likely reflecting the impact of [**Operation Golden Eagle**](https://www.wdsu.com/article/new-orleans-louisiana-state-police-nopd-crime-results/37804087), an NOPD initiative launched during summer 2021 to crack down on drag racing and other "summer crimes." This decline suggests that the operation may have temporarily deterred street racing and related activity.
 
 Around the same period, **alarm-related calls** increased. While no specific ordinances or procedural changes are documented, this rise may reflect shifts in alarm company protocols or increased enforcement efforts targeting false alarms.
+
+A particularly sharp and unusual increase occurred in the **Officer Safety** category beginning in **September 2022**. After months of single-digit and sometimes zero incident counts, these calls jumped to **9 in September**, then surged to **64 in October, 65 in November**, and **68 in December**. The cause is unclear, but possible explanations include **changes to how officer safety incidents were classified or logged,** an **uptick in officer-targeted threats**, or **policy shifts that prompted more proactive reporting** in this category. Another likely factor is the **high rate of officer attrition** during this period — due to retirements, resignations, and disciplinary terminations — which led to a surge in **rookie officer deployments**. Less experienced officers may be more likely to escalate incidents to "officer safety" status as a precaution, or may receive different training on how to classify threats.
 
 
 ### Served vs. Unserved Calls
