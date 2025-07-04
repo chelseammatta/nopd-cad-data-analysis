@@ -132,7 +132,7 @@ This bar graph shows the total number of **public-initiated 911 calls that went 
 
 The data reveals a surprisingly low total of only **68 unserved public-initiated calls** across four years. Nearly 60% of these are categorized as **Unknown/Unclassified**, which may indicate issues with call categorization or record-keeping rather than true service failures.
 
-The next most frequent category is **Community-related calls** (e.g., area checks, foot patrol requests), accounting for 25 unserved calls. The remaining unserved calls are spread across Judicial, Mutual Aid, Traffic, and Domestic Violence categories — each with only one or two instances. Some of these may reflect occasional misclassification errors between public-initiated and officer-initiated flags.
+The next most frequent category is **Community-related calls** (e.g., area checks, foot patrol requests), accounting for 25 unserved calls. The remaining unserved calls are spread across Judicial, Mutual Aid, Traffic, and Domestic Violence categories — each with only one instance. Some of these may reflect occasional misclassification errors between public-initiated and officer-initiated flags.
 
 Overall, this refined analysis suggests that the NOPD in these districts is largely responsive to public requests, with very few calls going unserved when the public initiates contact. It also highlights the importance of careful data cleaning and categorization to avoid misleading conclusions.
 
