@@ -86,13 +86,11 @@ Beyond the March 2020 spike, DV calls in the 3rd and 4th districts showed a **re
 
 ![Dispatch to Arrival Time by Call Category (minutes)](docs/response_time.png)
 
-Interestingly, the fastest average police response times were not associated with traditionally high-risk emergencies, but rather with calls categorized as **suspicious activity** (08:13), **alarm calls** (08:26), **unknown/unclassified** (08:32), and **community calls** (08:44). One possible explanation is that these categories tend to occur less frequently than others, so when they are dispatched, it's more likely that an officer is nearby and unassigned. In such cases, availability — not just urgency — may drive faster response.
+Interestingly, the fastest average police response times were not associated with the most urgent or high-risk emergencies. Instead, officers responded most quickly to calls related to suspicious activity (08:13), alarm activations (08:26), unknown/unclassified reports (08:32), and community-related issues (08:44). One possible explanation is that these calls often require minimal investigation or allow for quick on-scene resolution, making them more efficient for officers to handle — especially during gaps between higher-priority incidents.
 
-Slower response times were seen for **property crimes** (17:29), **sexual offenses** (14:38), **contraband violations** (14:00), and **domestic violence** (13:44). These longer delays may be linked to higher overall call volumes in these categories or their relative position in dispatch triage, especially when no immediate threat is reported.
+In contrast, slower response times were observed for property crimes (17:29), sexual offenses (14:38), contraband violations (14:00), and domestic violence (13:44). While some of these categories involve potentially serious offenses, many are reported after the fact, reducing their dispatch priority. Additionally, these calls often demand extensive reporting, interviews, or evidence handling, which may cause delays in assignment if officers are busy or anticipating high time investments.
 
-**Medical and mental health-related** calls fell near the middle of the response time range — a finding that might seem surprising. However, it's important to understand that these do **not** typically include high-priority injuries like shootings or assaults, which are usually categorized under **violent crime**. From the police perspective, a **medical** call usually signals need to assist EMS or to secure the scene before EMS arrives, rather than to directly intervene in a critical medical emergency.
-
-This chart includes only **public-initiated** calls from the **3rd and 4th police districts** between **2019 and 2022**, and only those calls with valid dispatch and arrival timestamps. **Self-initiated officer calls** were excluded due to inconsistent or missing timing data in the NOPD CAD system.
+These trends suggest that availability alone doesn't explain police response patterns. Instead, a combination of **call complexity, dispatch triage policies, and officer workload management** likely influences the timing of response — sometimes more than the perceived urgency of the call itself.
 
 
 ### Call Volume by Category
